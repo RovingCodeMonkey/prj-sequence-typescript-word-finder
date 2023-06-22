@@ -17,7 +17,7 @@ describe('testing index file', () => {
     let wordsList = new Array<string>();
     let expectedResult = new Array<string>();
     let wordsFound = wordFinder.find(testString, wordsList).sort();
-    console.log(wordsFound)
+    
     expect(wordsFound).toEqual(expectedResult);
   });
 
