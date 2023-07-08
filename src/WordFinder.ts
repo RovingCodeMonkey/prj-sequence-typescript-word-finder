@@ -5,10 +5,13 @@ export default class WordFinder {
       this.words = new Array<string>();
       this.validWords = new Array<string>();
     }
+    //Determine if it is a valid word
     isWord(s:string) : boolean {
       return this.validWords.includes(s)
     }
+    //Add all unique word permutations of the string 
     permutations(s:string, result:string) {
+      //It is a valid word and we don't have it already
       if (this.isWord(result) && !this.words.includes(result)) {
         this.words.push(result);
       }
@@ -24,6 +27,8 @@ export default class WordFinder {
       }
       
     }
+
+    //Takes in an input to check it's permutations contain valid words provided in validWords
     find(input: string, validWords: Array<string>) : Array<string> {
       this.words = new Array<string>();
       if(!input || !validWords) {
